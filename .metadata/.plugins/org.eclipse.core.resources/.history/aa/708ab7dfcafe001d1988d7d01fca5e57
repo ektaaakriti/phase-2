@@ -1,0 +1,17 @@
+package com.securedloan.arthavedika.repo;
+
+import java.awt.print.Pageable;
+import java.util.List;
+
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.PagingAndSortingRepository;
+import org.springframework.stereotype.Repository;
+
+import com.securedloan.arthavedika.model.Applicant;
+@Repository
+public interface ApplicantPaginationRepo extends PagingAndSortingRepository<Applicant, Long> {
+
+   // List<Product> findAllByPrice(double price, Pageable pageable);
+	@Query("SELECT a FROM Applicant a WHERE a.applicant_id=?1")
+	List<Applicant> findByApplicant_Id(Long applicant_id,Pageable pageable);
+}

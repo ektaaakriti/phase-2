@@ -1,0 +1,28 @@
+package com.securedloan.arthavedika.payload;
+
+import java.util.List;
+
+public class AuthorizeApplicantPayload {
+List<Long> Applicant_id;
+String Authorised_by;
+String Company_Name;
+
+public List<Long> getApplicant_id() {
+	return Applicant_id;
+}
+public void setApplicant_id(List<Long> applicant_id) {
+	Applicant_id = applicant_id;
+}
+public String getAuthorised_by() {
+	return Authorised_by;
+}
+public void setAuthorised_by(String authorised_by) {
+	Authorised_by = authorised_by;
+}
+public String getCompany_Name() {
+	return Company_Name;
+}
+public void setCompany_Name(String company_Name) {
+	Company_Name = company_Name;
+}
+}

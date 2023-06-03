@@ -1,0 +1,25 @@
+package com.securedloan.arthavedika.payload;
+
+public class AuthorizeApplicantPayload {
+int Applicant_id;
+String Authorised_by;
+String Company_Name;
+public int getApplicant_id() {
+	return Applicant_id;
+}
+public void setApplicant_id(int applicant_id) {
+	Applicant_id = applicant_id;
+}
+public String getAuthorised_by() {
+	return Authorised_by;
+}
+public void setAuthorised_by(String authorised_by) {
+	Authorised_by = authorised_by;
+}
+public String getCompany_Name() {
+	return Company_Name;
+}
+public void setCompany_Name(String company_Name) {
+	Company_Name = company_Name;
+}
+}

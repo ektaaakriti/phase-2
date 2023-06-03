@@ -1,0 +1,5 @@
+package com.securedloan.arthavedika.payload;
+
+public class FindAllApplicantPayload {
+
+}

@@ -1,0 +1,56 @@
+package com.securedloan.arthavedika.controller;
+
+import java.util.List;
+import java.util.Random;
+
+import javax.validation.Valid;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseStatus;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.securedloan.arthavedika.model.Applicant;
+import com.securedloan.arthavedika.model.User;
+import com.securedloan.arthavedika.response.FindAllApplicant;
+import com.securedloan.arthavedika.response.Result;
+import com.securedloan.arthavedika.service.ApplicantService;
+import com.securedloan.arthavedika.service.UserService;
+
+@CrossOrigin()
+@RestController
+@RequestMapping("applicant/borrower")
+public class BorrowerAppController {
+
+	private final Logger LOGGER = LoggerFactory.getLogger(UserController.class);
+	@Autowired
+	private ApplicantService applicantService;
+	@RequestMapping(value = { "/findAllApplicant/v1" }, method = RequestMethod.POST, produces = {
+			MediaType.APPLICATION_JSON_VALUE })
+	@ResponseStatus(value = HttpStatus.OK)
+	public ResponseEntity<FindAllApplicant> findAllApplicant() {
+		LOGGER.info("Find All applicant api is called");
+		List<Applicant> applicant=null;
+		try {
+
+			 applicant = applicantService.findAllAppicant();
+
+
+					return ResponseEntity.status(HttpStatus.OK).body(new FindAllApplicant(applicant,"list extracted succesfully", Boolean.TRUE));
+			
+
+		
+		} catch (Exception e) {
+			LOGGER.error("Error While retreiving all applicant list" + e.getMessage());
+			return ResponseEntity.badRequest().body(new FindAllApplicant(applicant,e.getMessage(), Boolean.FALSE));
+		}
+	}
+}

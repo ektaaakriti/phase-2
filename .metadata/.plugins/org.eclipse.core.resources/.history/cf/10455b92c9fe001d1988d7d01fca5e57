@@ -1,0 +1,5 @@
+package com.securedloan.arthavedika.repo;
+
+public class ApplicantPaginationRepo {
+
+}

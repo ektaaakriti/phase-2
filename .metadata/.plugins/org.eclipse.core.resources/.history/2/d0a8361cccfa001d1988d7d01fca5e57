@@ -1,0 +1,43 @@
+package com.securedloan.arthavedika.payload;
+
+import java.util.List;
+
+public class AuthorizeApplicantPayload {
+Long Applicant_id;
+String company_code;
+String av_approval;
+String mk_approval;
+String sh_approval;
+public Long getApplicant_id() {
+	return Applicant_id;
+}
+public void setApplicant_id(Long applicant_id) {
+	Applicant_id = applicant_id;
+}
+public String getCompany_code() {
+	return company_code;
+}
+public void setCompany_code(String company_code) {
+	this.company_code = company_code;
+}
+public String getAv_approval() {
+	return av_approval;
+}
+public void setAv_approval(String av_approval) {
+	this.av_approval = av_approval;
+}
+public String getMk_approval() {
+	return mk_approval;
+}
+public void setMk_approval(String mk_approval) {
+	this.mk_approval = mk_approval;
+}
+public String getSh_approval() {
+	return sh_approval;
+}
+public void setSh_approval(String sh_approval) {
+	this.sh_approval = sh_approval;
+}
+
+
+}
